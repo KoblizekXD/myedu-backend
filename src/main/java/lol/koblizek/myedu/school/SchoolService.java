@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class SchoolService {
@@ -17,5 +18,11 @@ public class SchoolService {
 
     public List<School> getAllSchools() {
         return schoolRepository.findAll();
+    }
+
+    public SchoolDto getSchoolInfo(UUID id) {
+        var optionalSchool = schoolRepository.findById(id);
+
+        return optionalSchool.map(SchoolDto::from).orElse(null);
     }
 }

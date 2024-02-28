@@ -1,6 +1,5 @@
 package lol.koblizek.myedu.user;
 
-import lol.koblizek.myedu.HatefulReply;
 import lol.koblizek.myedu.school.School;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,9 +12,9 @@ import java.util.UUID;
 @Getter
 @Setter
 public class UserService {
-    private final UserRepository studentRepository;
+    private final StudentRepository studentRepository;
 
-    public UserService(UserRepository studentRepository) {
+    public UserService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
