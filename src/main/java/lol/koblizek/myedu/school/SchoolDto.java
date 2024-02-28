@@ -10,7 +10,6 @@ import java.util.UUID;
 /**
  * DTO for {@link School}
  */
-@EqualsAndHashCode(callSuper = true)
 public record SchoolDto(UUID id, String name, String domain, @Email String contactEmail, SchoolPeriodTimings timings) implements Serializable {
 
     public static SchoolDto from(School school) {

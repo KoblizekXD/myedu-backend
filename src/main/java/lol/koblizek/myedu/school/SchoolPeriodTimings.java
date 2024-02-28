@@ -16,7 +16,7 @@ import java.util.List;
 public class SchoolPeriodTimings {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 

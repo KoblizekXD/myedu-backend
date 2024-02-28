@@ -11,7 +11,6 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
 @Getter
 @Setter
@@ -34,4 +33,6 @@ public abstract class User {
     @Column(name = "email", nullable = false)
     @Email
     private String email;
+
+    private String password;
 }
