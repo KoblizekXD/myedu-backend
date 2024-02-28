@@ -15,7 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public final class School {
+public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
@@ -26,6 +26,7 @@ public final class School {
 
     private String name;
     private String address;
+    private String domain;
 
     @Email
     @Column(name = "contact_email")
