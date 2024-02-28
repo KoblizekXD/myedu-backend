@@ -1,6 +1,5 @@
-package lol.koblizek.myedu;
+package lol.koblizek.myedu.util;
 
-import jakarta.validation.constraints.Null;
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
