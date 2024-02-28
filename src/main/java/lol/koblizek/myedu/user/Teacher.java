@@ -1,8 +1,7 @@
 package lol.koblizek.myedu.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lol.koblizek.myedu.school.School;
 import lol.koblizek.myedu.subject.Subject;
 import lombok.*;
 
@@ -19,4 +18,8 @@ public class Teacher extends User {
 
     @OneToMany(mappedBy = "teacher")
     private List<Subject> subjects;
+
+    @ManyToOne
+    @JoinColumn(name = "school_id")
+    private School school;
 }

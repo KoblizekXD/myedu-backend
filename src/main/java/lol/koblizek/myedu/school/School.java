@@ -3,6 +3,7 @@ package lol.koblizek.myedu.school;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lol.koblizek.myedu.user.Student;
+import lol.koblizek.myedu.user.Teacher;
 import lombok.*;
 
 import java.util.List;
@@ -31,6 +32,9 @@ public class School {
     @Email
     @Column(name = "contact_email")
     private String contactEmail;
+
+    @OneToMany(mappedBy = "school")
+    private List<Teacher> teachers;
 
     @OneToOne(mappedBy = "school")
     private SchoolPeriodTimings schoolPeriodTimings;
