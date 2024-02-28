@@ -24,6 +24,10 @@ public class Period {
 
     // Nth period
     private int period;
-
     private Date date;
+    private String topic;
+
+    @OneToOne
+    @JoinColumn(name = "homework_id")
+    private Homework homework;
 }

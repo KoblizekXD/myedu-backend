@@ -31,4 +31,7 @@ public class School {
     @Email
     @Column(name = "contact_email")
     private String contactEmail;
+
+    @OneToOne(mappedBy = "school")
+    private SchoolPeriodTimings schoolPeriodTimings;
 }
