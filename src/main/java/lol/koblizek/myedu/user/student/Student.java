@@ -1,4 +1,4 @@
-package lol.koblizek.myedu.user;
+package lol.koblizek.myedu.user.student;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -6,6 +6,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lol.koblizek.myedu.classroom.Classroom;
 import lol.koblizek.myedu.school.School;
+import lol.koblizek.myedu.user.User;
 import lombok.Getter;
 import lombok.Setter;
 

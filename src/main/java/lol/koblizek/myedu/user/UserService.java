@@ -1,6 +1,8 @@
 package lol.koblizek.myedu.user;
 
 import lol.koblizek.myedu.school.School;
+import lol.koblizek.myedu.user.student.Student;
+import lol.koblizek.myedu.user.student.StudentRepository;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;

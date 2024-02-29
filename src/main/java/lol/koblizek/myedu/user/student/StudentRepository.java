@@ -1,4 +1,4 @@
-package lol.koblizek.myedu.user;
+package lol.koblizek.myedu.user.student;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.NonNull;

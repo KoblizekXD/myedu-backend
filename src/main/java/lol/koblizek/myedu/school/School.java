@@ -2,8 +2,8 @@ package lol.koblizek.myedu.school;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lol.koblizek.myedu.user.Student;
-import lol.koblizek.myedu.user.Teacher;
+import lol.koblizek.myedu.user.student.Student;
+import lol.koblizek.myedu.user.teacher.Teacher;
 import lombok.*;
 
 import java.util.List;

@@ -34,5 +34,6 @@ public abstract class User {
     @Email
     private String email;
 
+    @Column(nullable = false)
     private String password;
 }

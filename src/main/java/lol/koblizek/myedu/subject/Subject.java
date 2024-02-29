@@ -2,7 +2,7 @@ package lol.koblizek.myedu.subject;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lol.koblizek.myedu.user.Teacher;
+import lol.koblizek.myedu.user.teacher.Teacher;
 import lombok.*;
 
 import java.util.List;
