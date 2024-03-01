@@ -1,5 +1,6 @@
-package lol.koblizek.myedu.school;
+package lol.koblizek.myedu.repositories;
 
+import lol.koblizek.myedu.models.school.School;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.repository.CrudRepository;
 

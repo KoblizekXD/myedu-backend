@@ -1,4 +1,4 @@
-package lol.koblizek.myedu.subject;
+package lol.koblizek.myedu.models.school;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

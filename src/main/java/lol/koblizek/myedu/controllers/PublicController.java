@@ -1,9 +1,9 @@
-package lol.koblizek.myedu.global;
+package lol.koblizek.myedu.controllers;
 
-import lol.koblizek.myedu.school.School;
-import lol.koblizek.myedu.school.SchoolDto;
-import lol.koblizek.myedu.school.SchoolService;
-import lol.koblizek.myedu.user.UserService;
+import lol.koblizek.myedu.models.school.PublicSchoolListing;
+import lol.koblizek.myedu.models.school.School;
+import lol.koblizek.myedu.dto.SchoolDto;
+import lol.koblizek.myedu.services.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

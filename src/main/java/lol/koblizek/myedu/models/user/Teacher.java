@@ -1,9 +1,8 @@
-package lol.koblizek.myedu.user.teacher;
+package lol.koblizek.myedu.models.user;
 
 import jakarta.persistence.*;
-import lol.koblizek.myedu.school.School;
-import lol.koblizek.myedu.subject.Subject;
-import lol.koblizek.myedu.user.User;
+import lol.koblizek.myedu.models.school.School;
+import lol.koblizek.myedu.models.school.Subject;
 import lombok.*;
 
 import java.util.List;

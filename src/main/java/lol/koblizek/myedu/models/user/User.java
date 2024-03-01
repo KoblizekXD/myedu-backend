@@ -1,12 +1,10 @@
-package lol.koblizek.myedu.user;
+package lol.koblizek.myedu.models.user;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lol.koblizek.myedu.school.School;
-import lol.koblizek.myedu.subject.Subject;
+import lol.koblizek.myedu.models.school.School;
 import lombok.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor

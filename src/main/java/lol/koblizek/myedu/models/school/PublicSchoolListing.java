@@ -1,4 +1,4 @@
-package lol.koblizek.myedu.global;
+package lol.koblizek.myedu.models.school;
 
 import java.util.List;
 import java.util.UUID;

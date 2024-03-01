@@ -1,4 +1,4 @@
-package lol.koblizek.myedu.user;
+package lol.koblizek.myedu.models.user;
 
 public enum OptionalPrivileges {
     MANAGE_SCHOOL,

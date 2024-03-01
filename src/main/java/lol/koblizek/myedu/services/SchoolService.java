@@ -1,5 +1,8 @@
-package lol.koblizek.myedu.school;
+package lol.koblizek.myedu.services;
 
+import lol.koblizek.myedu.dto.SchoolDto;
+import lol.koblizek.myedu.models.school.School;
+import lol.koblizek.myedu.repositories.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

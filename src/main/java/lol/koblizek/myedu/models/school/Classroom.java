@@ -1,8 +1,8 @@
-package lol.koblizek.myedu.classroom;
+package lol.koblizek.myedu.models.school;
 
 import jakarta.persistence.*;
-import lol.koblizek.myedu.user.student.Student;
-import lol.koblizek.myedu.user.teacher.Teacher;
+import lol.koblizek.myedu.models.user.Student;
+import lol.koblizek.myedu.models.user.Teacher;
 import lombok.Getter;
 import lombok.Setter;
 

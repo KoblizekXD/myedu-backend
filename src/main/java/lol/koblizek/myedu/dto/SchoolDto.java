@@ -1,8 +1,8 @@
-package lol.koblizek.myedu.school;
+package lol.koblizek.myedu.dto;
 
 import jakarta.validation.constraints.Email;
-import lombok.EqualsAndHashCode;
-import lombok.Value;
+import lol.koblizek.myedu.models.school.School;
+import lol.koblizek.myedu.models.school.SchoolPeriodTimings;
 
 import java.io.Serializable;
 import java.util.UUID;

@@ -1,6 +1,6 @@
 package lol.koblizek.myedu.util;
 
-import lol.koblizek.myedu.school.SchoolRepository;
+import lol.koblizek.myedu.repositories.SchoolRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
