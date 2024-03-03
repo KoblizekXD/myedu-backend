@@ -3,6 +3,7 @@ package lol.koblizek.myedu.controllers;
 import lol.koblizek.myedu.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -35,7 +36,7 @@ public class AuthController {
     }
 
     @PostMapping
-    public String authorize(@RequestBody AuthRequest body, Authentication authentication) {
+    public ResponseEntity<SuccessAuthResponse> authorize(@RequestBody AuthRequest body, Authentication authentication) {
         if (userService.userExists(body.username, body.password)) {
             Instant now = Instant.now();
             String scope = authentication.getAuthorities().stream()
@@ -48,9 +49,12 @@ public class AuthController {
                     .subject(authentication.getName())
                     .claim("scope", scope)
                     .build();
-            return jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+            return ResponseEntity
+                    .ok(new SuccessAuthResponse(jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue(), Duration.ofDays(expiration).toMinutes()));
         } else throw new BadCredentialsException("Invalid credentials");
     }
+
+    public record SuccessAuthResponse(String token, long expire) {}
 
     public record AuthRequest(String username, String password) {}
 }
