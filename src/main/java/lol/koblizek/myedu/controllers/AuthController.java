@@ -37,7 +37,7 @@ public class AuthController {
 
     @PostMapping
     public ResponseEntity<SuccessAuthResponse> authorize(@RequestBody AuthRequest body, Authentication authentication) {
-        if (userService.userExists(body.username, body.password)) {
+        if (userService.userExists(body.email, body.password)) {
             Instant now = Instant.now();
             String scope = authentication.getAuthorities().stream()
                     .map(GrantedAuthority::getAuthority)
@@ -56,5 +56,5 @@ public class AuthController {
 
     public record SuccessAuthResponse(String token, long expire) {}
 
-    public record AuthRequest(String username, String password) {}
+    public record AuthRequest(String email, String password) {}
 }

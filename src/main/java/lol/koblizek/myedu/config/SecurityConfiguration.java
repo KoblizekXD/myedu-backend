@@ -56,7 +56,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.ignoringRequestMatchers("/api/v1/auth"))
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/api/v1/public/**").permitAll()
+                    auth.requestMatchers("/api/v1/public/**", "/api/v1/auth").permitAll()
                             .anyRequest().authenticated();
                 })
                 .oauth2ResourceServer(c -> c.jwt(Customizer.withDefaults()))
