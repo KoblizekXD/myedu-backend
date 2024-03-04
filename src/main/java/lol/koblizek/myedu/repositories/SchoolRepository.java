@@ -9,4 +9,7 @@ import java.util.UUID;
 
 public interface SchoolRepository extends CrudRepository<School, UUID> {
     @NotNull List<School> findAll();
+
+    @Override
+    <S extends School> @NotNull S save(@NotNull S entity);
 }

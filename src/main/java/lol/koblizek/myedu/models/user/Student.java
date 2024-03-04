@@ -6,20 +6,19 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lol.koblizek.myedu.models.school.Classroom;
 import lol.koblizek.myedu.models.school.School;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "students")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student extends User {
 
     @ManyToOne
     @JoinColumn(name = "classroom_id")
     private Classroom classroom;
-
-    @ManyToOne
-    @JoinColumn(name = "school_id")
-    private School school;
 }

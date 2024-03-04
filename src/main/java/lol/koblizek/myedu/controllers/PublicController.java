@@ -31,6 +31,6 @@ public class PublicController {
 
     @GetMapping("/schools/{id}")
     public SchoolDto getSchoolInfo(@PathVariable String id) {
-        return schoolService.getSchoolInfo(UUID.fromString(id));
+        return schoolService.getPublicSchoolInfo(UUID.fromString(id));
     }
 }

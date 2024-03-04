@@ -23,9 +23,23 @@ public class SchoolService {
         return schoolRepository.findAll();
     }
 
-    public SchoolDto getSchoolInfo(UUID id) {
+    public SchoolDto getPublicSchoolInfo(UUID id) {
         var optionalSchool = schoolRepository.findById(id);
 
         return optionalSchool.map(SchoolDto::from).orElse(null);
+    }
+
+    public School getSchool(UUID id) {
+        return schoolRepository.findById(id).orElseThrow();
+    }
+
+    public School save(SchoolDto dto) {
+        return schoolRepository.save(School.builder()
+                        .name(dto.name())
+                        .domain(dto.domain())
+                        .schoolPeriodTimings(dto.timings())
+                        .contactEmail(dto.contactEmail())
+                        .address(dto.address())
+                .build());
     }
 }

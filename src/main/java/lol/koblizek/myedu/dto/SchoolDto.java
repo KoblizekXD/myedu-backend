@@ -10,9 +10,10 @@ import java.util.UUID;
 /**
  * DTO for {@link School}
  */
-public record SchoolDto(UUID id, String name, String domain, @Email String contactEmail, SchoolPeriodTimings timings) implements Serializable {
+public record SchoolDto(UUID id, String name, String domain, @Email String contactEmail, SchoolPeriodTimings timings,
+                        String address) implements Serializable {
 
     public static SchoolDto from(School school) {
-        return new SchoolDto(school.getId(), school.getName(), school.getDomain(), school.getContactEmail(), school.getSchoolPeriodTimings());
+        return new SchoolDto(school.getId(), school.getName(), school.getDomain(), school.getContactEmail(), school.getSchoolPeriodTimings(), school.getAddress());
     }
 }

@@ -1,5 +1,6 @@
 package lol.koblizek.myedu.services;
 
+import lol.koblizek.myedu.dto.StudentDto;
 import lol.koblizek.myedu.models.school.School;
 import lol.koblizek.myedu.models.user.Student;
 import lol.koblizek.myedu.models.user.Teacher;
@@ -58,5 +59,9 @@ public class UserService implements UserDetailsService {
         if (student.isPresent() && passwordEncoder.matches(password, student.get().getPassword())) {
             return true;
         } else return teacher.isPresent() && passwordEncoder.matches(password, teacher.get().getPassword());
+    }
+
+    public void saveStudent(StudentDto student) {
+        
     }
 }
