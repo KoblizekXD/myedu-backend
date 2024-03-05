@@ -4,6 +4,7 @@ import lol.koblizek.myedu.dto.StudentDto;
 import lol.koblizek.myedu.models.school.School;
 import lol.koblizek.myedu.models.user.Student;
 import lol.koblizek.myedu.models.user.Teacher;
+import lol.koblizek.myedu.models.user.User;
 import lol.koblizek.myedu.repositories.StudentRepository;
 import lol.koblizek.myedu.repositories.UserRepository;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.login.AccountNotFoundException;
 import java.util.List;
 import java.util.UUID;
 
@@ -50,6 +52,18 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return studentRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
+    public User getUserByEmail(String email) {
+        var student = studentRepository.findByEmail(email);
+        if (student.isPresent()) {
+            return student.get();
+        } else {
+            var t = teacherRepository.findByEmail(email);
+            if (t.isPresent())
+                return t.get();
+            else throw new RuntimeException("User not found");
+        }
     }
 
     public boolean userExists(String email, String password) {

@@ -1,5 +1,6 @@
 package lol.koblizek.myedu.controllers;
 
+import lol.koblizek.myedu.dto.SchoolDto;
 import lol.koblizek.myedu.models.school.School;
 import lol.koblizek.myedu.services.SchoolService;
 import lol.koblizek.myedu.services.UserService;
@@ -23,8 +24,7 @@ public class SchoolController {
     }
 
     @GetMapping
-    public ResponseEntity<String> getSchool(Authentication auth) {
-
-        return ResponseEntity.ok(auth.getName());
+    public ResponseEntity<SchoolDto> getSchool(Authentication auth) {
+        return ResponseEntity.ok(SchoolDto.from(userService.getUserByEmail(auth.getName()).getSchool()));
     }
 }
